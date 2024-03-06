@@ -1,0 +1,8 @@
+name: 'Custom Blog'
+type: module
+description: 'Creates a custom content type for blog posts with fields for title, body, author, and publication date.'
+core_version_requirement: ^8 || ^9
+package: Custom
+version: 1.0
+dependencies:
+  - node

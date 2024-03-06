@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function custom_blog_install() {
+  // Define custom database schema changes if necessary.
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function custom_blog_uninstall() {
+  // Clean up any custom database schema changes if necessary.
+}
+
+/**
+ * Implements hook_schema().
+ */
+function custom_blog_schema() {
+  $schema['custom_blog'] = [
+    'description' => 'Contains custom blog post content',
+    'fields' => [
+      'id' => [
+        'description' => 'The primary identifier for a blog post.',
+        'type' => 'serial',
+        'unsigned' => true,
+        'not null' => true,
+      ],
+      'title' => [
+        'description' => 'The title of the blog post.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => true,
+        'default' => '',
+      ],
+      'body' => [
+        'description' => 'The body of the blog post.',
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => true,
+      ],
+      'author' => [
+        'description' => 'The author of the blog post.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => true,
+        'default' => '',
+      ],
+      'publication_date' => [
+        'description' => 'The publication date of the blog post.',
+        'type' => 'int',
+        'not null' => true,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

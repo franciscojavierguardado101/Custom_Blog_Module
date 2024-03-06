@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function custom_blog_install() {
+  // Define custom database schema changes if necessary.
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function custom_blog_uninstall() {
+  // Clean up any custom database schema changes if necessary.
+}
